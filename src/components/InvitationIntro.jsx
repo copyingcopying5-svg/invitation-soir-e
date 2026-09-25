@@ -419,7 +419,7 @@ function InvitationIntro({ guestName = "Jean-Pierre", onOpen }) {
               "
             >
               <span className="font-semibold">
-                Confirmer ma présence
+                Ouvrir l'invitation
               </span>
 
               <span
