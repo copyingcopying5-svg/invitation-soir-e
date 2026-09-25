@@ -1,16 +1,19 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
 import {
   FaBars,
   FaTimes,
   FaHome,
   FaHeart,
   FaCalendarAlt,
-  FaTshirt,
+  FaEnvelopeOpenText,
   FaMapMarkerAlt,
-  FaClock,
+  FaLocationArrow,
+  FaGlassCheers,
+  FaTshirt,
+  FaQrcode,
   FaImages,
-  FaCheckCircle,
 } from "react-icons/fa";
 
 function Navigation() {
@@ -28,26 +31,41 @@ function Navigation() {
       icon: <FaHeart />,
     },
     {
-      label: "Les lieux",
-      target: "lieux",
+      label: "La date",
+      target: "calendrier",
+      icon: <FaCalendarAlt />,
+    },
+    {
+      label: "Notre invitation",
+      target: "invitation",
+      icon: <FaEnvelopeOpenText />,
+    },
+    {
+      label: "Les adresses",
+      target: "adresses",
       icon: <FaMapMarkerAlt />,
     },
     {
-      label: "Dress Code",
+      label: "Localisation",
+      target: "lieux",
+      icon: <FaLocationArrow />,
+    },
+    {
+      label: "Programme",
+      target: "programme",
+      icon: <FaGlassCheers />,
+    },
+    {
+      label: "Événement",
       target: "dress-code",
       icon: <FaTshirt />,
     },
     {
-      label: "Confirmation",
-      target: "confirmation",
-      icon: <FaCheckCircle />,
+      label: "Mon invitation",
+      target: "qr-code",
+      icon: <FaQrcode />,
     },
     {
-      label: "Compte à rebours",
-      target: "compte-a-rebours",
-      icon: <FaClock />,
-    },
-   {
       label: "Galerie",
       target: "galerie",
       icon: <FaImages />,
@@ -58,16 +76,22 @@ function Navigation() {
     setIsOpen(false);
 
     setTimeout(() => {
-      document.getElementById(id)?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      const section = document.getElementById(id);
+
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
     }, 100);
   };
 
   return (
     <>
-      {/* BOUTON FLOTTANT */}
+      {/* =========================
+          BOUTON MENU
+      ========================== */}
 
       <button
         onClick={() => setIsOpen(true)}
@@ -94,12 +118,12 @@ function Navigation() {
       </button>
 
 
-      {/* MENU */}
+      {/* =========================
+          MENU
+      ========================== */}
 
       <AnimatePresence>
-
         {isOpen && (
-
           <>
             {/* FOND */}
 
@@ -150,23 +174,29 @@ function Navigation() {
               "
             >
 
-              {/* HEADER */}
+              {/* =========================
+                  HEADER
+              ========================== */}
 
-              <div className="
-                flex
-                items-center
-                justify-between
-                mb-10
-              ">
+              <div
+                className="
+                  flex
+                  items-center
+                  justify-between
+                  mb-10
+                "
+              >
 
                 <div>
 
-                  <p className="
-                    text-[#C8A54D]
-                    uppercase
-                    tracking-[3px]
-                    text-xs
-                  ">
+                  <p
+                    className="
+                      text-[#C8A54D]
+                      uppercase
+                      tracking-[3px]
+                      text-xs
+                    "
+                  >
                     Navigation
                   </p>
 
@@ -176,6 +206,8 @@ function Navigation() {
 
                 </div>
 
+
+                {/* BOUTON FERMER */}
 
                 <button
                   onClick={() => setIsOpen(false)}
@@ -198,7 +230,9 @@ function Navigation() {
               </div>
 
 
-              {/* LIENS */}
+              {/* =========================
+                  LIENS
+              ========================== */}
 
               <nav className="space-y-2">
 
@@ -234,18 +268,26 @@ function Navigation() {
                     "
                   >
 
-                    <span className="
-                      w-9
-                      h-9
-                      rounded-full
-                      bg-white
-                      flex
-                      items-center
-                      justify-center
-                      text-[#C8A54D]
-                    ">
+                    {/* ICÔNE */}
+
+                    <span
+                      className="
+                        w-9
+                        h-9
+                        rounded-full
+                        bg-white
+                        flex
+                        items-center
+                        justify-center
+                        text-[#C8A54D]
+                        shrink-0
+                      "
+                    >
                       {link.icon}
                     </span>
+
+
+                    {/* TEXTE */}
 
                     <span>
                       {link.label}
@@ -258,38 +300,44 @@ function Navigation() {
               </nav>
 
 
-              {/* BAS */}
+              {/* =========================
+                  BAS DU MENU
+              ========================== */}
 
-              <div className="
-                mt-10
-                pt-7
-                border-t
-                border-gray-200
-                text-center
-              ">
+              <div
+                className="
+                  mt-10
+                  pt-7
+                  border-t
+                  border-gray-200
+                  text-center
+                "
+              >
 
-                <p className="
-                  text-xs
-                  text-gray-400
-                ">
+                <p
+                  className="
+                    text-xs
+                    text-gray-400
+                  "
+                >
                   Avec amour
                 </p>
 
-                <p className="
-                  text-[#C8A54D]
-                  mt-1
-                  italic
-                ">
+                <p
+                  className="
+                    text-[#C8A54D]
+                    mt-1
+                    italic
+                  "
+                >
                   Les futurs mariés
                 </p>
 
               </div>
 
             </motion.div>
-
           </>
         )}
-
       </AnimatePresence>
     </>
   );
