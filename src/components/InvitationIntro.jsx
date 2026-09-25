@@ -1,14 +1,14 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import background from "../assets/invitation-arriere.jpg";
 
 function InvitationIntro({ guestName = "Jean-Pierre", onOpen }) {
   const [opened, setOpened] = useState(false);
 
   const handleOpen = () => {
-    // Déclenche immédiatement l'ouverture et la musique
     setOpened(true);
 
-    // Lance notamment la musique
+    // Lance la musique
     onOpen();
   };
 
@@ -17,163 +17,219 @@ function InvitationIntro({ guestName = "Jean-Pierre", onOpen }) {
       {!opened && (
         <motion.div
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.7 }}
+          exit={{ opacity: 0, scale: 1.02 }}
+          transition={{ duration: 0.8 }}
           className="
             fixed
             inset-0
             z-[100]
-            bg-[#222]
+            overflow-hidden
             flex
             items-center
             justify-center
-            px-6
-            overflow-hidden
+            bg-[#4b0808]
           "
         >
-          {/* Bordure extérieure */}
+
+          {/* ============================= */}
+          {/* ARRIÈRE-PLAN */}
+          {/* ============================= */}
+
           <div
             className="
               absolute
-              inset-4
+              inset-0
+              bg-cover
+              bg-center
+              bg-no-repeat
+            "
+            style={{
+              backgroundImage: `url(${background})`,
+            }}
+          />
+
+          {/* Voile léger pour améliorer la lisibilité */}
+          <div
+            className="
+              absolute
+              inset-0
+              bg-[#fff8e9]/10
+              pointer-events-none
+            "
+          />
+
+          {/* ============================= */}
+          {/* CADRE EXTÉRIEUR */}
+          {/* ============================= */}
+
+          <div
+            className="
+              absolute
+              inset-3
+              sm:inset-5
               md:inset-8
               border
-              border-[#C8A54D]/50
+              border-[#d8ad5a]/70
               pointer-events-none
             "
           />
 
-          {/* Bordure intérieure */}
           <div
             className="
               absolute
-              inset-6
-              md:inset-10
+              inset-5
+              sm:inset-7
+              md:inset-11
               border
-              border-[#C8A54D]/30
+              border-[#d8ad5a]/35
               pointer-events-none
             "
           />
 
-          {/* ORNEMENT HAUT GAUCHE */}
+          {/* ============================= */}
+          {/* ORNEMENTS COINS */}
+          {/* ============================= */}
+
+          {/* Haut gauche */}
           <motion.div
             initial={{ opacity: 0, x: -30, y: -30 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.2 }}
+            transition={{ duration: 1, delay: 0.2 }}
             className="
               absolute
-              top-5
-              left-5
-              md:top-10
-              md:left-10
-              text-[#C8A54D]
+              top-7
+              left-7
+              md:top-12
+              md:left-12
+              text-[#d8ad5a]
+              text-4xl
+              md:text-6xl
               pointer-events-none
+              rotate-[-20deg]
             "
           >
-            <div className="text-5xl md:text-7xl font-serif rotate-[-15deg]">
-              ❦
-            </div>
+            ❦
           </motion.div>
 
-          {/* ORNEMENT HAUT DROIT */}
+          {/* Haut droit */}
           <motion.div
             initial={{ opacity: 0, x: 30, y: -30 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.3 }}
+            transition={{ duration: 1, delay: 0.3 }}
             className="
               absolute
-              top-5
-              right-5
-              md:top-10
-              md:right-10
-              text-[#C8A54D]
+              top-7
+              right-7
+              md:top-12
+              md:right-12
+              text-[#d8ad5a]
+              text-4xl
+              md:text-6xl
               pointer-events-none
+              rotate-[20deg]
             "
           >
-            <div className="text-5xl md:text-7xl font-serif rotate-[15deg]">
-              ❦
-            </div>
+            ❦
           </motion.div>
 
-          {/* ORNEMENT BAS GAUCHE */}
+          {/* Bas gauche */}
           <motion.div
             initial={{ opacity: 0, x: -30, y: 30 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.4 }}
+            transition={{ duration: 1, delay: 0.4 }}
             className="
               absolute
-              bottom-5
-              left-5
-              md:bottom-10
-              md:left-10
-              text-[#C8A54D]
+              bottom-7
+              left-7
+              md:bottom-12
+              md:left-12
+              text-[#d8ad5a]
+              text-4xl
+              md:text-6xl
               pointer-events-none
+              rotate-[20deg]
             "
           >
-            <div className="text-5xl md:text-7xl font-serif rotate-[15deg]">
-              ❦
-            </div>
+            ❦
           </motion.div>
 
-          {/* ORNEMENT BAS DROIT */}
+          {/* Bas droit */}
           <motion.div
             initial={{ opacity: 0, x: 30, y: 30 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.5 }}
+            transition={{ duration: 1, delay: 0.5 }}
             className="
               absolute
-              bottom-5
-              right-5
-              md:bottom-10
-              md:right-10
-              text-[#C8A54D]
+              bottom-7
+              right-7
+              md:bottom-12
+              md:right-12
+              text-[#d8ad5a]
+              text-4xl
+              md:text-6xl
               pointer-events-none
+              rotate-[-20deg]
             "
           >
-            <div className="text-5xl md:text-7xl font-serif rotate-[-15deg]">
-              ❦
-            </div>
+            ❦
           </motion.div>
 
-          {/* PETITS POINTS DÉCORATIFS */}
-          <div className="absolute top-[20%] left-[12%] text-[#C8A54D]/100 text-xs">
+          {/* ============================= */}
+          {/* PETITES ÉTOILES */}
+          {/* ============================= */}
+
+          <div className="absolute top-[22%] left-[15%] text-[#d8ad5a] text-xs">
             ✦
           </div>
 
-          <div className="absolute top-[28%] right-[14%] text-[#C8A54D]/90 text-sm">
+          <div className="absolute top-[30%] right-[14%] text-[#d8ad5a] text-sm">
             ✦
           </div>
 
-          <div className="absolute bottom-[25%] left-[15%] text-[#C8A54D]/90 text-sm">
+          <div className="absolute bottom-[25%] left-[13%] text-[#d8ad5a] text-sm">
             ✦
           </div>
 
-          <div className="absolute bottom-[18%] right-[12%] text-[#C8A54D]/100 text-xs">
+          <div className="absolute bottom-[19%] right-[16%] text-[#d8ad5a] text-xs">
             ✦
           </div>
 
-          {/* CONTENU */}
-          <div className="relative z-10 text-center max-w-2xl w-full">
+          {/* ============================= */}
+          {/* CONTENU PRINCIPAL */}
+          {/* ============================= */}
+
+          <div
+            className="
+              relative
+              z-10
+              w-full
+              max-w-3xl
+              px-8
+              sm:px-10
+              text-center
+            "
+          >
 
             {/* INTRODUCTION */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9 }}
               className="
                 font-['Poppins']
-                text-[#C8A54D]
+                text-[#75421f]
                 uppercase
                 tracking-[5px]
-                text-[10px]
+                text-[9px]
+                sm:text-[10px]
                 md:text-xs
-                mb-7
+                mb-5
               "
             >
               Une invitation particulière
             </motion.p>
 
-            {/* PETIT ORNEMENT */}
+            {/* ORNEMENT */}
             <motion.div
               initial={{ opacity: 0, scaleX: 0 }}
               animate={{ opacity: 1, scaleX: 1 }}
@@ -186,16 +242,19 @@ function InvitationIntro({ guestName = "Jean-Pierre", onOpen }) {
                 mb-6
               "
             >
-              <div className="w-12 md:w-20 h-[1px] bg-[#C8A54D]" />
+              <div className="w-10 sm:w-16 md:w-24 h-[1px] bg-[#b88635]" />
 
-              <span className="text-[#C8A54D] text-sm">
+              <span className="text-[#b88635] text-xl">
                 ❦
               </span>
 
-              <div className="w-12 md:w-20 h-[1px] bg-[#C8A54D]" />
+              <div className="w-10 sm:w-16 md:w-24 h-[1px] bg-[#b88635]" />
             </motion.div>
 
-            {/* PRÉNOMS */}
+            {/* ============================= */}
+            {/* NOMS */}
+            {/* ============================= */}
+
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -206,78 +265,162 @@ function InvitationIntro({ guestName = "Jean-Pierre", onOpen }) {
                 sm:text-6xl
                 md:text-8xl
                 font-semibold
-                text-[#777777]
-                leading-none
-                mb-4
+                text-[#641414]
+                leading-[0.85]
+                tracking-wide
               "
             >
-              JEDIDIA <span className="text-[#C8A54D]"><br />&</span><br /> DEFI
+              JEDIDIA
             </motion.h1>
 
-            {/* DATE */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.9, delay: 0.7 }}
+            {/* & */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.7 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.55 }}
               className="
-                font-['Poppins']
-                text-[#777777]
-                text-sm
-                md:text-base
-                tracking-[2px]
-                uppercase
-                mb-8
+                font-serif
+                italic
+                text-[#b88635]
+                text-4xl
+                sm:text-5xl
+                md:text-6xl
+                leading-none
+                my-2
               "
             >
-              S’unissent ce samedi 24 octobre 2026
-            </motion.p>
+              &
+            </motion.div>
 
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.45 }}
+              className="
+                font-['Cormorant_Garamond']
+                text-5xl
+                sm:text-6xl
+                md:text-8xl
+                font-semibold
+                text-[#641414]
+                leading-[0.85]
+                tracking-wide
+              "
+            >
+              DEFI
+            </motion.h1>
+
+            {/* ============================= */}
+            {/* DATE */}
+            {/* ============================= */}
+
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.8 }}
+              className="mt-7"
+            >
+              <p
+                className="
+                  font-['Poppins']
+                  text-[#6e351d]
+                  uppercase
+                  tracking-[3px]
+                  text-[10px]
+                  sm:text-xs
+                  md:text-sm
+                  mb-2
+                "
+              >
+                S'unissent ce samedi
+              </p>
+
+              <p
+                className="
+                  font-['Cormorant_Garamond']
+                  italic
+                  text-[#9a632c]
+                  text-3xl
+                  sm:text-4xl
+                  md:text-5xl
+                "
+              >
+                24 Octobre 2026
+              </p>
+            </motion.div>
+
+            {/* ============================= */}
             {/* SÉPARATEUR */}
+            {/* ============================= */}
+
             <motion.div
               initial={{ opacity: 0, scaleX: 0 }}
               animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
+              transition={{ duration: 0.8, delay: 1 }}
               className="
-                w-20
-                h-[1px]
-                bg-[#C8A54D]
-                mx-auto
-                mb-8
+                flex
+                items-center
+                justify-center
+                gap-3
+                mt-6
+                mb-7
               "
-            />
+            >
+              <div className="w-12 md:w-20 h-[1px] bg-[#b88635]" />
 
+              <span className="text-[#b88635] text-lg">
+                ❦
+              </span>
+
+              <div className="w-12 md:w-20 h-[1px] bg-[#b88635]" />
+            </motion.div>
+
+            {/* ============================= */}
             {/* BOUTON */}
+            {/* ============================= */}
+
             <motion.button
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 1.5 }}
+              transition={{ duration: 0.9, delay: 1.2 }}
               onClick={handleOpen}
+              whileHover={{
+                scale: 1.03,
+              }}
+              whileTap={{
+                scale: 0.98,
+              }}
               className="
-                        group
-                        relative
-                        inline-flex
-                        items-center
-                        justify-center
-                        gap-4
-                        bg-[#C8A54D]
-                        text-white
-                        px-12
-                        md:px-14
-                        py-5
-                        md:py-[22px]
-                        rounded-full
-                        shadow-[0_8px_30px_rgba(200,165,77,0.25)]
-                        hover:shadow-[0_10px_35px_rgba(200,165,77,0.35)]
-                        hover:scale-[1.02]
-                        transition-all
-                        duration-300
-                        font-['Poppins']
-                        text-sm
-                        md:text-base
-                        tracking-[1px]
-                      "
+                group
+                relative
+                inline-flex
+                items-center
+                justify-center
+                gap-4
+                bg-[#720d0d]
+                text-[#fff8e9]
+                px-9
+                sm:px-12
+                md:px-14
+                py-4
+                sm:py-5
+                rounded-full
+                border
+                border-[#c89b43]
+                shadow-[0_8px_25px_rgba(92,15,15,0.25)]
+                hover:shadow-[0_12px_35px_rgba(92,15,15,0.35)]
+                transition-all
+                duration-300
+                font-['Poppins']
+                text-xs
+                sm:text-sm
+                md:text-base
+                tracking-[1px]
+              "
             >
-              <span className="font-bold text-base md:text-lg">Confirmer ma présence</span>
+              <span className="font-semibold">
+                Confirmer ma présence
+              </span>
 
               <span
                 className="
@@ -292,21 +435,26 @@ function InvitationIntro({ guestName = "Jean-Pierre", onOpen }) {
               </span>
             </motion.button>
 
-            {/* PETITE MENTION */}
+            {/* ============================= */}
+            {/* PETITE PHRASE */}
+            {/* ============================= */}
+
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1.8 }}
+              transition={{ duration: 0.8, delay: 1.5 }}
               className="
                 font-['Poppins']
-                text-[9px]
+                text-[8px]
+                sm:text-[9px]
                 md:text-[10px]
-                text-[#AAAAAA]
+                text-[#805a3c]
                 mt-5
-                tracking-[1px]
+                tracking-[2px]
+                uppercase
               "
             >
-              Une journée d’amour, de joie et de partage
+              Une journée d'amour, de joie et de partage
             </motion.p>
 
           </div>
