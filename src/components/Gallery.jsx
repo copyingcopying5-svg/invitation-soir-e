@@ -26,7 +26,7 @@ function Gallery() {
   ];
 
   return (
-    <section id="galerie" className="py-24 px-6 bg-[#F8EDEF]">
+    <section id="galerie" className="py-24 px-6 bg-[#B8A6A1]">
 
       <div className="max-w-6xl mx-auto">
 

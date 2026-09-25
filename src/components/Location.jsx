@@ -13,7 +13,7 @@ function Location() {
   return (
     <section
       id="lieux"
-      className="py-24 px-6 bg-[#FAF8F5]"
+      className="py-24 px-6 bg-[#B8A6A1]"
     >
       <div className="max-w-4xl mx-auto">
 
@@ -26,17 +26,6 @@ function Location() {
           transition={{ duration: 0.8 }}
           className="mb-10"
         >
-          <h2 className="text-5xl mb-6">
-            Lieu de l’événement
-          </h2>
-
-          <p className="text-gray-600 leading-8">
-            N°2, Croisement des avenues Munua et Dikuku <br />
-            Golf Météo Faustin <br />
-            Réf : Arret La Katangaise
-          </p><br />
-
-          {/* CARTE */}
 
           <div
             className="

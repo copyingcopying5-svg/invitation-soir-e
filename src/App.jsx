@@ -9,6 +9,11 @@ import Location from "./components/Location";
 import Gallery from "./components/Gallery";
 import Countdown from "./components/Countdown";
 import RSVP from "./components/RSVP";
+import Calendar from "./components/Calendar";
+import InvitationMessage from "./components/InvitationMessage";
+import Addresses from "./components/Addresses";
+import Programme from "./components/Programme";
+import QRCodeSection from "./components/QRCodeSection";
 
 function App() {
   const [invitationOpened, setInvitationOpened] = useState(false);
@@ -117,10 +122,16 @@ function App() {
           <main>
             <Hero />
             <Story />
+            <Calendar />
+            <InvitationMessage />
+            <Addresses />
             <Location />
+            <Programme />
             <Event />
-            <RSVP guestName={guestName} />
-            <Countdown />
+            <QRCodeSection
+              guestName="Jean-Pierre"
+              tableNumber="12"
+            />
             <Gallery />
           </main>
         </>
