@@ -56,7 +56,7 @@ function Navigation() {
       icon: <FaGlassCheers />,
     },
     {
-      label: "Événement",
+      label: "Dress Code",
       target: "dress-code",
       icon: <FaTshirt />,
     },
