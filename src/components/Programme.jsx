@@ -1,13 +1,11 @@
 import { motion } from "framer-motion";
 import {
-  FaGlassCheers,
   FaHeart,
   FaGift,
   FaUtensils,
   FaMusic,
   FaBirthdayCake,
   FaUsers,
-  FaPlay,
 } from "react-icons/fa";
 
 function Programme() {
@@ -177,11 +175,12 @@ function Programme() {
                   {event.side === "left" && (
                     <div className="text-right">
 
+                      {/* HEURE */}
                       <p
                         className="
                           font-['Poppins']
-                          text-xl
-                          md:text-2xl
+                          text-lg
+                          md:text-xl
                           font-bold
                           tracking-[2px]
                           text-[#111]
@@ -190,11 +189,12 @@ function Programme() {
                         {event.time}
                       </p>
 
+                      {/* TITRE */}
                       <p
                         className="
                           font-['Cormorant_Garamond']
-                          text-xl
-                          md:text-2xl
+                          text-lg
+                          md:text-xl
                           font-semibold
                           uppercase
                           text-[#222]
@@ -209,8 +209,8 @@ function Programme() {
                         <p
                           className="
                             font-['Poppins']
-                            text-xs
-                            md:text-sm
+                            text-[11px]
+                            md:text-xs
                             uppercase
                             text-[#666]
                             mt-1
@@ -270,11 +270,12 @@ function Programme() {
                   {event.side === "right" && (
                     <div className="text-left">
 
+                      {/* HEURE */}
                       <p
                         className="
                           font-['Poppins']
-                          text-xl
-                          md:text-2xl
+                          text-lg
+                          md:text-xl
                           font-bold
                           tracking-[2px]
                           text-[#111]
@@ -283,11 +284,12 @@ function Programme() {
                         {event.time}
                       </p>
 
+                      {/* TITRE */}
                       <p
                         className="
                           font-['Cormorant_Garamond']
-                          text-xl
-                          md:text-2xl
+                          text-lg
+                          md:text-xl
                           font-semibold
                           uppercase
                           text-[#222]
@@ -302,8 +304,8 @@ function Programme() {
                         <p
                           className="
                             font-['Poppins']
-                            text-xs
-                            md:text-sm
+                            text-[11px]
+                            md:text-xs
                             uppercase
                             text-[#666]
                             mt-1
