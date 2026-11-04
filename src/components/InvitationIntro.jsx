@@ -116,22 +116,6 @@ function InvitationIntro({ guestName = "Cher invité", onOpen }) {
                 </p>
               </motion.div>
 
-              {/* NOM DE L'INVITÉ */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2 }}
-                className="mt-8 mx-auto max-w-sm border-y border-[#C66B4E]/40 py-4"
-              >
-                <p className="font-['Poppins'] text-[#8A7665] uppercase tracking-[3px] text-[9px] sm:text-[10px] mb-2">
-                  Invitation est destinée à
-                </p>
-
-                <p className="font-['Cormorant_Garamond'] text-[#0F4C3A] text-2xl sm:text-3xl font-semibold">
-                  {guestName}
-                </p>
-              </motion.div>
-
               {/* BOUTON */}
               <motion.button
                 initial={{ opacity: 0, y: 20 }}

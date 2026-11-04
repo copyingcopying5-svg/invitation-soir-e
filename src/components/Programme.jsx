@@ -119,7 +119,7 @@ function Location() {
       
 {/* LOCALISATION GPS */}
 <section className="py-20 px-6 bg-white">
-  <div className="max-w-5xl mx-auto">
+  <div id="localisation" className="max-w-5xl mx-auto">
 
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -281,7 +281,7 @@ function Location() {
             transition={{ duration: 0.6 }}
             className="mt-20 rounded-3xl bg-white border border-[#0F4C3A]/10 p-10 sm:p-14 text-center shadow-[0_8px_35px_rgba(15,76,58,0.05)]"
           >
-            <div className="w-14 h-14 rounded-full bg-[#0F4C3A]/5 flex items-center justify-center mx-auto mb-5">
+            <div id="dress-code" className="w-14 h-14 rounded-full bg-[#0F4C3A]/5 flex items-center justify-center mx-auto mb-5">
               <span className="text-[#C66B4E] text-2xl">✦</span>
             </div>
 

@@ -26,23 +26,13 @@ function Navigation() {
       icon: <FaHome />,
     },
     {
-      label: "Notre histoire",
-      target: "histoire",
-      icon: <FaHeart />,
-    },
-    {
-      label: "La date",
-      target: "calendrier",
-      icon: <FaCalendarAlt />,
-    },
-    {
       label: "Notre invitation",
       target: "invitation",
       icon: <FaEnvelopeOpenText />,
     },
     {
       label: "Les adresses",
-      target: "adresses",
+      target: "lieux",
       icon: <FaMapMarkerAlt />,
     },
     {
