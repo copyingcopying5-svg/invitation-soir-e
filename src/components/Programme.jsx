@@ -156,7 +156,7 @@ function Location() {
       className="overflow-hidden rounded-3xl border border-[#0F4C3A]/10 shadow-[0_10px_40px_rgba(15,76,58,0.08)]"
     >
       <iframe
-        src="https://www.google.com/maps?q=-11.640610964056501,27.422246124257697&output=embed"
+        src="https://www.google.com/maps?q=-11.675411931484872,27.47927978650754&output=embed"
         title="Lieu de la réception"
         width="100%"
         height="450"
