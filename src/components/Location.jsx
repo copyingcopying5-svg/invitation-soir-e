@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 
 function Location() {
   // Coordonnées GPS exactes du lieu
-  const latitude = -11.640610964056501;
-  const longitude = 27.422246124257697;
- 
+  const latitude = -11.675411931484872;
+  const longitude = 27.47927978650754;
+
   // URL Google Maps pour ouvrir le lieu
   const mapsUrl = `https://www.google.com/maps?q=${latitude},${longitude}&output=embed`;
   // Lien pour ouvrir Google Maps directement

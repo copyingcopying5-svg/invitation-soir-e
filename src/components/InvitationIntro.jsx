@@ -114,6 +114,10 @@ function InvitationIntro({ guestName = "Cher invité", onOpen }) {
                 <p className="font-['Cormorant_Garamond'] italic text-[#C66B4E] text-3xl sm:text-4xl mt-2">
                   14 Novembre 2026
                 </p>
+
+                <p className="font-['Poppins'] text-[#0F4C3A] uppercase tracking-[3px] text-[10px] sm:text-xs">
+                  A la salle Emmanuel
+                </p>
               </motion.div>
 
               {/* BOUTON */}

@@ -17,7 +17,7 @@ function Location() {
     },
     {
       type: "Soirée",
-      title: "Réception",
+      title: "Salle Emmanuel",
       address: "Av. Likasi, C. Lubumbashi, Ville de Lubumbashi",
       theme: "Emeraude terracota",
       mapsUrl:
