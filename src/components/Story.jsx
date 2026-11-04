@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import img1 from "../assets/img2.jpg";
+import img1 from "../assets/img1.jpg";
 
 function Story() {
   return (
