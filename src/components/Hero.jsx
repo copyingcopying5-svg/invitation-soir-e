@@ -28,11 +28,11 @@ function Hero() {
       >
         <br />
         <h1 className="text-6xl md:text-8xl font-bold mb-6">
-          JEDIDIA
+          GAEL
           <br /><br />
           &
           <br /><br />
-          DEFI
+          DORCAS
         </h1>
       </motion.div>
 

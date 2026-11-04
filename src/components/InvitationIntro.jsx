@@ -1,15 +1,13 @@
+
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import background from "../assets/invitation-arriere.jpg";
 
-function InvitationIntro({ guestName = "Jean-Pierre", onOpen }) {
+function InvitationIntro({ guestName = "Cher invité", onOpen }) {
   const [opened, setOpened] = useState(false);
 
   const handleOpen = () => {
     setOpened(true);
-
-    // Lance la musique
-    onOpen();
+    onOpen?.();
   };
 
   return (
@@ -17,447 +15,143 @@ function InvitationIntro({ guestName = "Jean-Pierre", onOpen }) {
       {!opened && (
         <motion.div
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0, scale: 1.02 }}
+          exit={{ opacity: 0, scale: 1.03 }}
           transition={{ duration: 0.8 }}
-          className="
-            fixed
-            inset-0
-            z-[100]
-            overflow-hidden
-            flex
-            items-center
-            justify-center
-            bg-[#4b0808]
-          "
+          className="fixed inset-0 z-[100] overflow-hidden flex items-center justify-center bg-[#0F4C3A]"
         >
+          {/* FOND */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0B382D] via-[#155744] to-[#092E25]" />
 
-          {/* ============================= */}
-          {/* ARRIÈRE-PLAN */}
-          {/* ============================= */}
+          {/* HALOS DÉCORATIFS */}
+          <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-[#C66B4E]/20 blur-3xl" />
+          <div className="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-[#C66B4E]/20 blur-3xl" />
 
-          <div
-            className="
-              absolute
-              inset-0
-              bg-cover
-              bg-center
-              bg-no-repeat
-            "
-            style={{
-              backgroundImage: `url(${background})`,
-            }}
-          />
-
-          {/* Voile léger pour améliorer la lisibilité */}
-          <div
-            className="
-              absolute
-              inset-0
-              bg-[#fff8e9]/10
-              pointer-events-none
-            "
-          />
-
-          {/* ============================= */}
-          {/* CADRE EXTÉRIEUR */}
-          {/* ============================= */}
-
-          <div
-            className="
-              absolute
-              inset-3
-              sm:inset-5
-              md:inset-8
-              border
-              border-[#d8ad5a]/70
-              pointer-events-none
-            "
-          />
-
-          <div
-            className="
-              absolute
-              inset-5
-              sm:inset-7
-              md:inset-11
-              border
-              border-[#d8ad5a]/35
-              pointer-events-none
-            "
-          />
-
-          {/* ============================= */}
-          {/* ORNEMENTS COINS */}
-          {/* ============================= */}
-
-          {/* Haut gauche */}
-          <motion.div
-            initial={{ opacity: 0, x: -30, y: -30 }}
-            animate={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="
-              absolute
-              top-7
-              left-7
-              md:top-12
-              md:left-12
-              text-[#d8ad5a]
-              text-4xl
-              md:text-6xl
-              pointer-events-none
-              rotate-[-20deg]
-            "
-          >
-            ❦
-          </motion.div>
-
-          {/* Haut droit */}
-          <motion.div
-            initial={{ opacity: 0, x: 30, y: -30 }}
-            animate={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="
-              absolute
-              top-7
-              right-7
-              md:top-12
-              md:right-12
-              text-[#d8ad5a]
-              text-4xl
-              md:text-6xl
-              pointer-events-none
-              rotate-[20deg]
-            "
-          >
-            ❦
-          </motion.div>
-
-          {/* Bas gauche */}
-          <motion.div
-            initial={{ opacity: 0, x: -30, y: 30 }}
-            animate={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="
-              absolute
-              bottom-7
-              left-7
-              md:bottom-12
-              md:left-12
-              text-[#d8ad5a]
-              text-4xl
-              md:text-6xl
-              pointer-events-none
-              rotate-[20deg]
-            "
-          >
-            ❦
-          </motion.div>
-
-          {/* Bas droit */}
-          <motion.div
-            initial={{ opacity: 0, x: 30, y: 30 }}
-            animate={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="
-              absolute
-              bottom-7
-              right-7
-              md:bottom-12
-              md:right-12
-              text-[#d8ad5a]
-              text-4xl
-              md:text-6xl
-              pointer-events-none
-              rotate-[-20deg]
-            "
-          >
-            ❦
-          </motion.div>
-
-          {/* ============================= */}
-          {/* PETITES ÉTOILES */}
-          {/* ============================= */}
-
-          <div className="absolute top-[22%] left-[15%] text-[#d8ad5a] text-xs">
-            ✦
+          {/* FORMES BOTANIQUES */}
+          <div className="absolute top-0 left-0 text-[#C66B4E]/30 text-[150px] sm:text-[220px] leading-none rotate-45 pointer-events-none">
+            ❧
           </div>
 
-          <div className="absolute top-[30%] right-[14%] text-[#d8ad5a] text-sm">
-            ✦
+          <div className="absolute bottom-0 right-0 text-[#C66B4E]/30 text-[150px] sm:text-[220px] leading-none -rotate-45 pointer-events-none">
+            ❧
           </div>
 
-          <div className="absolute bottom-[25%] left-[13%] text-[#d8ad5a] text-sm">
-            ✦
-          </div>
+          {/* PETITS DÉTAILS */}
+          <div className="absolute top-[15%] right-[12%] w-3 h-3 rounded-full bg-[#D99A7D]" />
+          <div className="absolute bottom-[18%] left-[12%] w-2 h-2 rounded-full bg-[#D99A7D]" />
 
-          <div className="absolute bottom-[19%] right-[16%] text-[#d8ad5a] text-xs">
-            ✦
-          </div>
-
-          {/* ============================= */}
-          {/* CONTENU PRINCIPAL */}
-          {/* ============================= */}
-
-          <div
-            className="
-              relative
-              z-10
-              w-full
-              max-w-3xl
-              px-8
-              sm:px-10
-              text-center
-            "
+          {/* CARTE PRINCIPALE */}
+          <motion.div
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 1 }}
+            className="relative z-10 w-[90%] max-w-xl"
           >
+            <div className="relative bg-[#F5EFE5] rounded-t-[180px] rounded-b-2xl px-6 sm:px-12 pt-16 pb-12 text-center shadow-2xl overflow-hidden">
 
-            {/* INTRODUCTION */}
-            <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9 }}
-              className="
-                font-['Poppins']
-                text-[#75421f]
-                uppercase
-                tracking-[5px]
-                text-[9px]
-                sm:text-[10px]
-                md:text-xs
-                mb-5
-              "
-            >
-              Une invitation particulière
-            </motion.p>
+              {/* CADRE INTÉRIEUR */}
+              <div className="absolute inset-3 border border-[#C66B4E]/50 rounded-t-[170px] rounded-b-xl pointer-events-none" />
 
-            {/* ORNEMENT */}
-            <motion.div
-              initial={{ opacity: 0, scaleX: 0 }}
-              animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="
-                flex
-                items-center
-                justify-center
-                gap-3
-                mb-6
-              "
-            >
-              <div className="w-10 sm:w-16 md:w-24 h-[1px] bg-[#b88635]" />
+              {/* MOTIF SUPÉRIEUR */}
+              <div className="relative text-[#C66B4E] text-4xl mb-5">
+                ❧
+              </div>
 
-              <span className="text-[#b88635] text-xl">
-                ❦
-              </span>
-
-              <div className="w-10 sm:w-16 md:w-24 h-[1px] bg-[#b88635]" />
-            </motion.div>
-
-            {/* ============================= */}
-            {/* NOMS */}
-            {/* ============================= */}
-
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="
-                font-['Cormorant_Garamond']
-                text-5xl
-                sm:text-6xl
-                md:text-8xl
-                font-semibold
-                text-[#641414]
-                leading-[0.85]
-                tracking-wide
-              "
-            >
-              JEDIDIA
-            </motion.h1>
-
-            {/* & */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.7 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.55 }}
-              className="
-                font-serif
-                italic
-                text-[#b88635]
-                text-4xl
-                sm:text-5xl
-                md:text-6xl
-                leading-none
-                my-2
-              "
-            >
-              &
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.45 }}
-              className="
-                font-['Cormorant_Garamond']
-                text-5xl
-                sm:text-6xl
-                md:text-8xl
-                font-semibold
-                text-[#641414]
-                leading-[0.85]
-                tracking-wide
-              "
-            >
-              DEFI
-            </motion.h1>
-
-            {/* ============================= */}
-            {/* DATE */}
-            {/* ============================= */}
-
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.8 }}
-              className="mt-7"
-            >
-              <p
-                className="
-                  font-['Poppins']
-                  text-[#6e351d]
-                  uppercase
-                  tracking-[3px]
-                  text-[10px]
-                  sm:text-xs
-                  md:text-sm
-                  mb-2
-                "
+              {/* INTRODUCTION */}
+              <motion.p
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="relative font-['Poppins'] text-[#0F4C3A] uppercase tracking-[4px] text-[10px] sm:text-xs mb-5"
               >
-                S'unissent ce samedi
-              </p>
+                Une invitation particulière
+              </motion.p>
 
-              <p
-                className="
-                  font-['Cormorant_Garamond']
-                  italic
-                  text-[#9a632c]
-                  text-3xl
-                  sm:text-4xl
-                  md:text-5xl
-                "
+              {/* NOM DES MARIÉS */}
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="relative font-['Cormorant_Garamond'] text-5xl sm:text-7xl font-semibold text-[#0F4C3A] leading-none"
               >
-                24 Octobre 2026
-              </p>
-            </motion.div>
+                GAEL
+              </motion.h1>
 
-            {/* ============================= */}
-            {/* SÉPARATEUR */}
-            {/* ============================= */}
-
-            <motion.div
-              initial={{ opacity: 0, scaleX: 0 }}
-              animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ duration: 0.8, delay: 1 }}
-              className="
-                flex
-                items-center
-                justify-center
-                gap-3
-                mt-6
-                mb-7
-              "
-            >
-              <div className="w-12 md:w-20 h-[1px] bg-[#b88635]" />
-
-              <span className="text-[#b88635] text-lg">
-                ❦
-              </span>
-
-              <div className="w-12 md:w-20 h-[1px] bg-[#b88635]" />
-            </motion.div>
-
-            {/* ============================= */}
-            {/* BOUTON */}
-            {/* ============================= */}
-
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 1.2 }}
-              onClick={handleOpen}
-              whileHover={{
-                scale: 1.03,
-              }}
-              whileTap={{
-                scale: 0.98,
-              }}
-              className="
-                group
-                relative
-                inline-flex
-                items-center
-                justify-center
-                gap-4
-                bg-[#720d0d]
-                text-[#fff8e9]
-                px-9
-                sm:px-12
-                md:px-14
-                py-4
-                sm:py-5
-                rounded-full
-                border
-                border-[#c89b43]
-                shadow-[0_8px_25px_rgba(92,15,15,0.25)]
-                hover:shadow-[0_12px_35px_rgba(92,15,15,0.35)]
-                transition-all
-                duration-300
-                font-['Poppins']
-                text-xs
-                sm:text-sm
-                md:text-base
-                tracking-[1px]
-              "
-            >
-              <span className="font-semibold">
-                Ouvrir l'invitation
-              </span>
-
-              <span
-                className="
-                  text-lg
-                  md:text-xl
-                  group-hover:translate-x-1
-                  transition-transform
-                  duration-300
-                "
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.7 }}
+                className="font-serif italic text-[#C66B4E] text-4xl sm:text-5xl my-2"
               >
-                →
-              </span>
-            </motion.button>
+                &
+              </motion.div>
 
-            {/* ============================= */}
-            {/* PETITE PHRASE */}
-            {/* ============================= */}
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+                className="relative font-['Cormorant_Garamond'] text-5xl sm:text-7xl font-semibold text-[#0F4C3A] leading-none"
+              >
+                DORCAS
+              </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1.5 }}
-              className="
-                font-['Poppins']
-                text-[8px]
-                sm:text-[9px]
-                md:text-[10px]
-                text-[#805a3c]
-                mt-5
-                tracking-[2px]
-                uppercase
-              "
-            >
-              Une journée d'amour, de joie et de partage
-            </motion.p>
+              {/* DATE */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1 }}
+                className="mt-7"
+              >
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <div className="w-10 h-px bg-[#C66B4E]" />
+                  <span className="text-[#C66B4E]">✦</span>
+                  <div className="w-10 h-px bg-[#C66B4E]" />
+                </div>
 
-          </div>
+                <p className="font-['Poppins'] text-[#0F4C3A] uppercase tracking-[3px] text-[10px] sm:text-xs">
+                  S'unissent ce samedi
+                </p>
+
+                <p className="font-['Cormorant_Garamond'] italic text-[#C66B4E] text-3xl sm:text-4xl mt-2">
+                  14 Novembre 2026
+                </p>
+              </motion.div>
+
+              {/* NOM DE L'INVITÉ */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2 }}
+                className="mt-8 mx-auto max-w-sm border-y border-[#C66B4E]/40 py-4"
+              >
+                <p className="font-['Poppins'] text-[#8A7665] uppercase tracking-[3px] text-[9px] sm:text-[10px] mb-2">
+                  Invitation est destinée à
+                </p>
+
+                <p className="font-['Cormorant_Garamond'] text-[#0F4C3A] text-2xl sm:text-3xl font-semibold">
+                  {guestName}
+                </p>
+              </motion.div>
+
+              {/* BOUTON */}
+              <motion.button
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.4 }}
+                onClick={handleOpen}
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                className="relative mt-8 inline-flex items-center justify-center gap-3 bg-[#0F4C3A] hover:bg-[#C66B4E] text-[#F5EFE5] px-8 sm:px-10 py-4 rounded-full shadow-lg transition-all duration-300 font-['Poppins'] text-xs sm:text-sm tracking-wider"
+              >
+                <span>Ouvrir mon invitation</span>
+                <span className="text-lg">→</span>
+              </motion.button>
+
+              {/* ORNEMENT INFÉRIEUR */}
+              <div className="text-[#C66B4E] text-3xl mt-4">
+                ❧
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>

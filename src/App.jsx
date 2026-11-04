@@ -219,19 +219,9 @@ function App() {
           <main>
             <Hero />
 
-            <Story />
-
-            <Calendar />
-
             <InvitationMessage />
 
-            <Addresses />
-
-            <Location />
-
             <Programme />
-
-            <Event />
 
             <QRCodeSection />
 

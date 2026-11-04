@@ -105,8 +105,9 @@ function InvitationMessage() {
               font-light
             "
           >
-            C'est avec une immense joie que nous vous invitons à
-            partager avec nous le bonheur de notre union.
+            Nous avons le plaisir de vous inviter à célébrer avec nous notre union.
+            Votre présence à nos côtés sera un véritable bonheur et contribuera à rendre cette journée inoubliable.
+            Nous serions honorés de vous compter parmi nos invités pour partager ce moment unique de joie et d'amour.
           </p>
 
           <p
