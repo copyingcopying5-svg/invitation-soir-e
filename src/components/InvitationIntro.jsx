@@ -116,7 +116,7 @@ function InvitationIntro({ guestName = "Cher invité", onOpen }) {
                 </p>
 
                 <p className="font-['Poppins'] text-[#0F4C3A] uppercase tracking-[3px] text-[10px] sm:text-xs">
-                  A la salle Emmanuel
+                  <br />A la salle Emmanuel
                 </p>
               </motion.div>
 
