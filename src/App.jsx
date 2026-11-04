@@ -135,7 +135,7 @@ function App() {
 
       <audio
         ref={audioRef}
-        src="/music/wedding-music.mp3"
+        src="#"
         loop
         preload="auto"
       />

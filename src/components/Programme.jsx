@@ -296,6 +296,9 @@ function Location() {
             <div className="flex justify-center gap-3 mt-7">
               <div className="w-8 h-8 rounded-full bg-[#0F4C3A]" />
               <div className="w-8 h-8 rounded-full bg-[#C66B4E]" />
+              <div className="w-8 h-8 rounded-full bg-[#C39F61]" />
+              <div className="w-8 h-8 rounded-full bg-[#E2682C]" />
+              <div className="w-8 h-8 rounded-full bg-[#F6884E]" />
               <div className="w-8 h-8 rounded-full bg-[#FFFFFF] border border-gray-200" />
             </div>
           </motion.div>

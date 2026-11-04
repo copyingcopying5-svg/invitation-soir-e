@@ -136,7 +136,7 @@ function QRCodeSection() {
 
       const nameBox = {
         x: pdfWidth * 0.742,
-        y: pdfHeight * 0.130,
+        y: pdfHeight * 0.40,
         width: pdfWidth * 0.16,
         height: pdfHeight * 0.065,
       };
