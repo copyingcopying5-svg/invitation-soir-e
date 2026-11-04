@@ -5,8 +5,6 @@ import {
   FaBars,
   FaTimes,
   FaHome,
-  FaHeart,
-  FaCalendarAlt,
   FaEnvelopeOpenText,
   FaMapMarkerAlt,
   FaLocationArrow,
@@ -31,13 +29,13 @@ function Navigation() {
       icon: <FaEnvelopeOpenText />,
     },
     {
-      label: "Les adresses",
+      label: "Adresses",
       target: "lieux",
       icon: <FaMapMarkerAlt />,
     },
     {
       label: "Localisation",
-      target: "lieux",
+      target: "localisation",
       icon: <FaLocationArrow />,
     },
     {
